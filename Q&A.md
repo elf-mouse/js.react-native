@@ -2,33 +2,27 @@ __Q: BABEL TransformError__
 
 A: `rm node_modules/react-deep-force-update/.babelrc`
 
+---
+
 __Q: [Android] FAILURE: Build failed with an exception.__
 
-A: `my-project/android/build.gradle` (version <= 1.2.3)
+A: Try downgrading your Gradle version to _1.2.3_ in `android/build.gradle`.
 
-```
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        mavenLocal()
-        jcenter()
-    }
-}
-```
+---
 
 __Q: [Android] Unable to download JS bundle__
 
 A: `adb reverse tcp:8081 tcp:8081`
+
+---
+
+__Q: [Android] UnsupportedMethodException__
+
+```
+Unsupported method: AndroidProject.getPluginGeneration().
+The version of Gradle you connect to does not support that method.
+To resolve the problem you can change/upgrade the target version of Gradle you connect to.
+Alternatively, you can ignore this exception and read other information
+```
+
+A: disabled `Instant Run`
